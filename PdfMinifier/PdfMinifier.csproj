@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9280EEC2-BDA4-4865-8FE1-521F1269C255}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PdfMinifier</RootNamespace>
+    <AssemblyName>PdfMinifier</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>.\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="JpegEncoder\BaseJPEGEncoder.cs" />
+    <Compile Include="JpegEncoder\Imaging.cs" />
+    <Compile Include="JpegEncoder\InteropGDI.cs" />
+    <Compile Include="JpegEncoder\JpegHeader.cs" />
+    <Compile Include="JpegEncoder\Tables.cs" />
+    <Compile Include="JpegEncoder\Utils.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PalleteQuantizer\ColorCaches\BaseColorCache.cs" />
+    <Compile Include="PalleteQuantizer\ColorCaches\Common\ColorModel.cs" />
+    <Compile Include="PalleteQuantizer\ColorCaches\EuclideanDistance\EuclideanDistanceColorCache.cs" />
+    <Compile Include="PalleteQuantizer\ColorCaches\IColorCache.cs" />
+    <Compile Include="PalleteQuantizer\ColorCaches\LocalitySensitiveHash\LshBucketInfo.cs" />
+    <Compile Include="PalleteQuantizer\ColorCaches\LocalitySensitiveHash\LshColorCache.cs" />
+    <Compile Include="PalleteQuantizer\ColorCaches\Octree\OctreeCacheNode.cs" />
+    <Compile Include="PalleteQuantizer\ColorCaches\Octree\OctreeColorCache.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\BaseColorDitherer.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\ErrorDiffusion\AtkinsonDithering.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\ErrorDiffusion\BaseErrorDiffusionDitherer.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\ErrorDiffusion\BurkesDitherer.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\ErrorDiffusion\FanDitherer.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\ErrorDiffusion\FilterLiteSierra.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\ErrorDiffusion\FloydSteinbergDitherer.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\ErrorDiffusion\JarvisJudiceNinkeDitherer.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\ErrorDiffusion\ShiauDitherer.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\ErrorDiffusion\SierraDitherer.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\ErrorDiffusion\StuckiDitherer.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\ErrorDiffusion\TwoRowSierraDitherer.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\IColorDitherer.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\Ordered\BaseOrderedDitherer.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\Ordered\BayerDitherer4.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\Ordered\BayerDitherer8.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\Ordered\ClusteredDotDitherer.cs" />
+    <Compile Include="PalleteQuantizer\Ditherers\Ordered\DotHalfToneDitherer.cs" />
+    <Compile Include="PalleteQuantizer\Extensions\Extend.IEnumerable.cs" />
+    <Compile Include="PalleteQuantizer\Extensions\Extend.Image.cs" />
+    <Compile Include="PalleteQuantizer\Extensions\Extend.PixelFormat.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\ColorModelHelper.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\FastRandom.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\Guard.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\ImageBuffer.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\Pixel.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\Pixels\IIndexedPixel.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\Pixels\Indexed\PixelData1Indexed.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\Pixels\Indexed\PixelData4Indexed.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\Pixels\Indexed\PixelData8Indexed.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\Pixels\INonIndexedPixel.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\Pixels\NonIndexed\PixelDataArgb1555.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\Pixels\NonIndexed\PixelDataArgb64.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\Pixels\NonIndexed\PixelDataArgb8888.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\Pixels\NonIndexed\PixelDataGray16.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\Pixels\NonIndexed\PixelDataRgb48.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\Pixels\NonIndexed\PixelDataRgb555.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\Pixels\NonIndexed\PixelDataRgb565.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\Pixels\NonIndexed\PixelDataRgb888.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\Pixels\NonIndexed\PixelDataRgb8888.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\PixelTransform.cs" />
+    <Compile Include="PalleteQuantizer\Helpers\QuantizationHelper.cs" />
+    <Compile Include="PalleteQuantizer\PathProviders\IPathProvider.cs" />
+    <Compile Include="PalleteQuantizer\PathProviders\ReversedPathProvider.cs" />
+    <Compile Include="PalleteQuantizer\PathProviders\SerpentinePathProvider.cs" />
+    <Compile Include="PalleteQuantizer\PathProviders\StandardPathProvider.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\BaseColorCacheQuantizer.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\BaseColorQuantizer.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\DistinctSelection\DistinctBucket.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\DistinctSelection\DistinctColorInfo.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\DistinctSelection\DistinctSelectionQuantizer.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\IColorQuantizer.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\MedianCut\MedianCutCube.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\MedianCut\MedianCutQuantizer.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\NeuQuant\NeuralColorQuantizer.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\Octree\OctreeNode.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\Octree\OctreeQuantizer.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\OptimalPalette\OptimalPaletteQuantizer.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\Popularity\PopularityColorSlot.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\Popularity\PopularityQuantizer.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\Uniform\UniformColorSlot.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\Uniform\UniformQuantizer.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\XiaolinWu\WuColorCube.cs" />
+    <Compile Include="PalleteQuantizer\Quantizers\XiaolinWu\WuColorQuantizer.cs" />
+    <Compile Include="PdfImageCompression.cs" />
+    <Compile Include="PdfImageReader.cs" />
+    <Compile Include="PdfImageWriter.cs" />
+    <Compile Include="PdfMinifier.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
