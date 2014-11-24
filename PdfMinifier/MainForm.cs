@@ -85,7 +85,7 @@ namespace PdfMinifier
             PdfFileSizeAfter = new System.IO.FileInfo(fileNameTextBox.Text.Replace(".pdf", "-small.pdf")).Length;
             var decreasePercent = 100 - Math.Round((double)((PdfFileSizeAfter * 100) / PdfFileSizeBefore), 2);
             string message = String.Format("Viskas!{0}Pdf dydis buvo: {1}{0}Pdf dydis dabar: {2}{0}Pdf failo dydis sumažėjo {3}%", Environment.NewLine, FormatBytes(PdfFileSizeBefore), FormatBytes(PdfFileSizeAfter), decreasePercent);
-            MessageBox.Show(message, "PDF Sumažinimas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(message, "PdfMinifier", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -143,12 +143,12 @@ namespace PdfMinifier
                 var page = pagePair.Value;
 
                 message += String.Format("Puslapis #{0} {1}x{2}mm", page.Number, page.Width, page.Height) + NL;
-                message += String.Format("Puslapyje yra {0} paveikslėlis(-ių)", page.Images.Count) + NL;
+                message += String.Format("Puslapyje yra {0} atvaizdas (-ų)", page.Images.Count) + NL;
 
                 for (int i = 0; i < page.Images.Count; ++i)
                 {
                     var image = page.Images[i];
-                    message += String.Format("#{0}: {1} {2} dpi {3}x{4}   {5}", i + 1, image.Format, image.Dpi, image.Width, image.Height, FormatBytes(image.Size)) + NL;
+                    message += String.Format("Atvaizdas #{0}: {1} {2} dpi {3}x{4}   {5}", i + 1, image.Format, image.Dpi, image.Width, image.Height, FormatBytes(image.Size)) + NL;
                 }
                 message += "---------------------------------------------------------------------------" + NL;
             }
@@ -163,6 +163,7 @@ namespace PdfMinifier
             browseButton.Enabled = enabled;
             compressionDropDown.Enabled = enabled;
             compressionTrackBar.Enabled = enabled;
+            decreaseColorsCheckBox.Enabled = enabled;
             progressBar1.Visible = !enabled;
         }
 

@@ -179,11 +179,13 @@
             // decreaseColorsCheckBox
             // 
             this.decreaseColorsCheckBox.AutoSize = true;
+            this.decreaseColorsCheckBox.Checked = true;
+            this.decreaseColorsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.decreaseColorsCheckBox.Location = new System.Drawing.Point(18, 127);
             this.decreaseColorsCheckBox.Name = "decreaseColorsCheckBox";
-            this.decreaseColorsCheckBox.Size = new System.Drawing.Size(251, 17);
+            this.decreaseColorsCheckBox.Size = new System.Drawing.Size(278, 17);
             this.decreaseColorsCheckBox.TabIndex = 9;
-            this.decreaseColorsCheckBox.Text = "Bandyti sumažinti spalvų kiekį paveikslė (lėčiau)";
+            this.decreaseColorsCheckBox.Text = "Bandyti sumažinti spalvų kiekį paveikslėliuose (lėčiau)";
             this.decreaseColorsCheckBox.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -229,7 +231,7 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PDF Sumažinimas";
+            this.Text = "PdfMinifier – PDF sumažinimas";
             ((System.ComponentModel.ISupportInitialize)(this.compressionTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compressionDropDown)).EndInit();
             this.ResumeLayout(false);
